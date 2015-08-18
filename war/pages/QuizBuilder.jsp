@@ -10,27 +10,30 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex">
 <link type="text/css" rel="stylesheet" href="ast.css">
+<link type="text/css" rel="stylesheet" href="astforms.css">
+
 <title>Quiz Builder</title>
 <body>
 	<h1>Quiz Parameters</h1>
-	<h2></h2>
-	<p>
+
+	<div class="navigation">
 		<jsp:include page="/pages/nav.jsp" />
-	</p>
+	</div>
 		<form action="quiz" method="post">
-		<table>
 		
+			
 			<c:forEach items="${form.fields}" var="field" varStatus="loop">
-				<tr><td>
+			<div class="formfield">
+				
 				<c:out value="${field.html }" default="Missing field descripton" escapeXml="false" />
 				<c:if test="${not empty field.validationNote }">
 				<div class="errorNote"><c:out value="${field.validationNote }" /></div></c:if>
-				</td></tr>
+				
+				</div>
 			</c:forEach>
 		
-		</table>
-				<p><input type="submit" value="Build Quiz!" /></p>
-
+		
+				<button type="submit" name = "submit" value="Build Quiz!" />Build it</button>
 	</form>
 	
 	

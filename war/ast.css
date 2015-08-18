@@ -10,13 +10,7 @@ html {
 	background-size: 25em;
 	font-family: Verdana, Geneva, sans-serif;
 }
-.errorNote {
-	color:#444444;
-	display:inline;
-	padding-left: 0.5em;
-	font-style: italic;
 
-}
 
 
 .cell {
@@ -103,21 +97,6 @@ header h1 {
 	font-size: 1.2em;
 }
 
-form {
-	border-radius: 10px;
-	filter:Alpha(opacity=100);
-	background-color: #ff8020;
-	opacity: 1.0;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    padding-right: 1em;
-    padding-left: 1em;
-
-}
-
-input {
-	background-color: #FFFFFF;
-}
 
 /* unvisited link */
 a:link {

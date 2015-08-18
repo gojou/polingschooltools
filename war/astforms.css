@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+form {
+	border-radius: 10px;
+	filter:Alpha(opacity=100);
+	background-color: #ff8020;
+	opacity: 1.0;
+   margin-top:1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-right: 1em;
+    padding-left: 1em;
+
+}
+.formfield{
+  padding-top:.4em;
+  padding-bottom:.4em
+}
+
+.errorNote {
+  padding-left:.5em;
+	color:#444444;
+	display:inline;
+	padding-left: 0.5em;
+	font-style: italic;
+
+}
+
+button{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background: #BB3300;
+  	color: #ffffff;
+font: 1em Arial, Helvetica, Geneva, sans-serif;
+  padding: 1.2em;
+  padding-bottom: .2em;
+  padding-top:.2em;
+  
+}
+
+button [type=submit] {
+  font:large
+      border: 1px solid #ff8020;
+    color: #fff;
+    background: #BB3300;;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+
+button [type=submit]:hover {
+      border: 1px solid #444444;
+    color: #fff;
+    background: #BB3300;;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+
+
+.submitButton{
+  margin-bottom: 1em;
+
+}

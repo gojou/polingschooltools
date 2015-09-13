@@ -6,6 +6,7 @@ public enum QuizType implements OptionEnum {
 	NEGATIVES("subtraction with negatives"),
 	MULTIPLICATION("multiplication"), 
 	FRACTIONS("fraction"), 
+	WHOLE_FRACTIONS("fractions without remainders"),
 	DIVISION("division")
 /*	ADD_AND_SUBTRACT("addition and subtraction"),
 	MULTIPLY_AND_FRACTION("multiplication and addition"),

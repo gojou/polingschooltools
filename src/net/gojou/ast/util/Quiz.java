@@ -171,6 +171,8 @@ public class Quiz implements Serializable {
 			return Operations.MULTIPLICATION;
 		case FRACTIONS:
 			return Operations.FRACTIONS;
+		case WHOLE_FRACTIONS:
+			return Operations.WHOLE_FRACTIONS;
 		case DIVISION:
 			return Operations.DIVISION;
 			/*		case ADD_AND_SUBTRACT:

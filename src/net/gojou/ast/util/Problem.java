@@ -29,8 +29,6 @@ public class Problem implements Serializable{
     
     public Problem(Operations op, int x, int y){
     	this.operation = op;
-    	
-
     	if (x < y){
 			min = x;
 			max = y;
@@ -39,20 +37,9 @@ public class Problem implements Serializable{
 			min = y;
 			max = x;
 		}
-		
-		n1 = rand.nextInt((max - min) + 1) + min;
-		n2 = rand.nextInt((max - min) + 1) + min;
-		
-		if (op.toString().equals("SUBTRACTION")){
-			int low;
-			int high;
-			if(n1<n2){
-				high = n2;
-				low = n1;
-				n1 = high;
-				n2 = low;
-			}
-		}
+    	this.generatePair();
+
+
 		
     	this.hashCode = Problem.getHashCode(op, n1, n2);
 		
@@ -65,7 +52,76 @@ public class Problem implements Serializable{
 
     }
     
+*/   
+    
+    private void generatePair(){
+    	
+    	// TODO: Fix this hot mess. Should be handled with a switch/case
+    	// n1 and n2 should be set within this 
+
+		
+		n1 = rand.nextInt((max - min) + 1) + min;
+		n2 = rand.nextInt((max - min) + 1) + min;
+		
+		switch(this.operation){
+		case SUBTRACTION:
+			int low;
+			int high;
+			if(n1<n2){
+				high = n2;
+				low = n1;
+				n1 = high;
+				n2 = low;
+			}
+			break;
+		case WHOLE_FRACTIONS:
+			
+			int dividend;
+//			int divisor;
+			
+			while (n2 == 0){
+				n2 = rand.nextInt((max - min) + 1) + min;
+			}
+			
+			dividend = n1 * n2;
+			n1 = dividend;
+			break;
+
+		default:
+			break;
+			
+		}
+		
+		
+/*		
+		if (this.operation.toString().equals("WHOLE_FRACTIONS")){
+			
+			boolean tryAgain = false;
+			
+			tryAgain = n2==0;
+			
+			
+			
+			if (n1 % n2 != 0) {
+				this.generatePair();
+			}
+
+		}
+*/		
+/*		
+		if (this.operation.toString().equals("SUBTRACTION")){
+			int low;
+			int high;
+			if(n1<n2){
+				high = n2;
+				low = n1;
+				n1 = high;
+				n2 = low;
+			}
+		}
+    	
 */    
+		}
     
 	public int getN1() {
 		return n1;
@@ -140,6 +196,7 @@ public String getTerm2String(){
 			answerString = Integer.toString(this.getProduct());
 			break;
 		case FRACTIONS:
+		case WHOLE_FRACTIONS:
 
 			Integer whole = this.getDiv();
 			Integer numerator = this.getMod();
@@ -154,13 +211,13 @@ public String getTerm2String(){
 					answerString = numerator.toString();
 				}
 				if (whole.equals(0) && !numerator.equals(0)){
-					answerString  = numerator + "/" + denominator;
+					answerString  = Problem.asFraction(numerator, denominator);
 				}
 				if (!whole.equals(0) && numerator.equals(0)){
 					answerString = whole.toString();
 				}
 				if (!whole.equals(0) && !numerator.equals(0)) {
-					answerString = whole + " " + numerator + "/" + denominator;
+					answerString = whole + " " + Problem.asFraction(numerator, denominator);
 				}
 			}
 			break;
@@ -252,6 +309,15 @@ public String getTerm2String(){
 		for (x=0;n>0;++x)
 			n/=10;
 		return x;			
+	}
+	
+	private static int gcd(int a, int b) {
+	    return b == 0 ? a : gcd(b, a % b); // Not bad for one line of code :)
+	}
+
+	private static String asFraction(int a, int b) {
+	    int gcm = gcd(a, b);
+	    return (a / gcm) + "/" + (b / gcm);
 	}
 
 

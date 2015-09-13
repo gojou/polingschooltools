@@ -1,7 +1,6 @@
 package net.gojou.ast.fields;
 
 import java.io.Serializable;
-import java.util.Map;
 
 
 public abstract class AbstractField implements Field , Serializable {

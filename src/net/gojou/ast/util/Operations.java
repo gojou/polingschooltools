@@ -5,7 +5,8 @@ public enum Operations {
 	SUBTRACTION("-","subtraction"),
 	NEGATIVES("-","subtraction with negatives"),
 	MULTIPLICATION("x","multiplication"), 
-	FRACTIONS("/","fractions"), 
+	FRACTIONS("/","fractions"),
+	WHOLE_FRACTIONS("/","fractions without remainders"),
 	DIVISION("&divide;","division");
 	
 	private final String symbol;

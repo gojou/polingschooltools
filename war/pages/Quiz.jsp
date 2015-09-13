@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page session="true"%>
@@ -15,8 +15,16 @@
 <body>
 	<h1>Quiz</h1>
 	<p><jsp:include page="nav.jsp" /></p>
+	<div class="quizheader">
+	<div class="fieldlabel">Name:</div>
+	<div class="fieldbox">&nbsp;</div>
+	<div class="fieldlabel">Date:</div>
+	<div class="fieldbox">&nbsp;</div>
+	</div>
+	
 	<table>
 		<tr>
+		
 			<c:forEach items="${quiz.problems}" var="Problem" varStatus="loop">
 				<c:if test="${not loop.first and loop.index % 5 == 0}">
 		</tr>
@@ -33,6 +41,7 @@
 					<div class="solution">
 						<c:if test="${answers}">${Problem.solutionString}</c:if>
 						<c:if test="${not answers}">&nbsp;</c:if>
+					</div>
 					</div>
 					</td>
 			</c:forEach>

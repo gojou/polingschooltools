@@ -3,7 +3,7 @@ package net.gojou.ast.fields;
 import java.io.Serializable;
 
 
-public abstract class AbstractField implements Field , Serializable {
+public abstract class AbstractField implements DataField, Field , Serializable {
 	
 	private static final long serialVersionUID = 5380955017448934191L;
 	

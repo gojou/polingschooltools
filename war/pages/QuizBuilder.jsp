@@ -7,12 +7,13 @@
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
+<head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex">
 <link type="text/css" rel="stylesheet" href="ast.css">
 <link type="text/css" rel="stylesheet" href="astforms.css">
-
 <title>Quiz Builder</title>
+</head>
 <body>
 	<h1>Quiz Parameters</h1>
 

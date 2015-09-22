@@ -7,7 +7,6 @@ import net.gojou.ast.fields.Field;
 public interface Form {
 	
 	 
-	
 	public Set<Field> getFields();
 	public void setFields(Set<Field> fieldList);
 	 

@@ -1,8 +1,6 @@
 package net.gojou.ast.forms;
 
 import java.io.Serializable;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 import net.gojou.ast.fields.Field;
 import net.gojou.ast.fields.IntegerField;
@@ -20,17 +18,7 @@ public class QuizForm extends AbstractForm implements Form, Serializable {
 	private Field f2;
 	private Field f3;
 	private Field f4;
-	
-	private static final Map<String,String> validInputMap = new LinkedHashMap<String,String>();
-	static {
-		validInputMap.put("addition", "ADDITION");
-		validInputMap.put("subtraction", "SUBTRACTION");
-		validInputMap.put("multiplication", "MULTIPLICATION");
-		validInputMap.put("fractions", "FRACTIONS");
-		validInputMap.put("division", "DIVISION");
-	}
-	
-	
+
 	public QuizForm() {
 		// TODO Auto-generated constructor stub
 		
@@ -63,10 +51,13 @@ public class QuizForm extends AbstractForm implements Form, Serializable {
 		f4.setRequired(true);
 		f4.setDefaultInput(Operations.ADDITION.toString());
 		
-		fields.add(f1);
-		fields.add(f2);
-		fields.add(f3);
-		fields.add(f4);
+		super.fields.add(f1);
+		super.fields.add(f2);
+		super.fields.add(f3);
+		super.fields.add(f4);
 
 	}
+
+
+	
 }

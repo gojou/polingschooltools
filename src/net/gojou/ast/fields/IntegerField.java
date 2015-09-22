@@ -2,6 +2,8 @@ package net.gojou.ast.fields;
 
 import java.io.Serializable;
 
+import net.gojou.ast.util.C;
+
 
 public class IntegerField extends AbstractField implements Field , Serializable  {
 
@@ -25,13 +27,13 @@ public class IntegerField extends AbstractField implements Field , Serializable 
 	
 	@Override
 	public void setValue(Object value){
-
+		
 		if (value instanceof Integer){
 			this.value = value;
 		} 
 		else if (value instanceof String){
 			try {
-				this.value = Integer.parseInt(entry);
+				this.value = new Integer(Integer.parseInt((String)value));
 			}
 			catch (NumberFormatException ex1){
 				this.value = null;
@@ -49,7 +51,7 @@ public class IntegerField extends AbstractField implements Field , Serializable 
 		/**
 		 * 
 		 */
-		return "text";
+		return "integer";
 	}
 	
 /*

@@ -1,7 +1,7 @@
 package net.gojou.ast.util;
 
 public final class C {
-/*	
+	
 	public static void o(String string){
 		System.out.print(string);
 	}
@@ -19,5 +19,5 @@ public final class C {
 	}
 	
 	
-*/
+
 }

@@ -1,8 +1,3 @@
-/** Description of MyClass 
- *
- * @author Mark Poling
- * @version 6.0z Build 9000 Jan 3, 1970.
- */
 package net.gojou.ast.fields;
 
 public interface Field {
@@ -10,6 +5,12 @@ public interface Field {
 	public abstract void setName(String fieldName);
 	public abstract String getName();
 
+	public abstract void setValue(Object fieldValue);
+	public abstract Object getValue();
+
+	public abstract String getValueString();
+
+	
 	public abstract void setLabel(String fieldLabel);
 	public abstract String getLabel();
 	
@@ -17,9 +18,6 @@ public interface Field {
 	public abstract String getEntry();
 	
 
-	public abstract void setValue(Object fieldValue);
-	public abstract Object getValue();
-	public abstract String getValueString();
 
 	public abstract String getFieldType();
 	

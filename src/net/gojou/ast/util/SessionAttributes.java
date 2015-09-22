@@ -11,6 +11,11 @@ public final class SessionAttributes {
 	public static final String PROBLEMCOUNT = "length";
 	public static final String OPERATION = "operation";
 	public static final String RESET = "reset";
+	
+	public static final String ELEMENTS_FORM = "elementsform";
+	public static final String ELEMENT_NUMBER = "elementnumber";
+	public static final String ELEMENT_Symbol = "elementsymbol";
+	public static final String ELEMENT_NAME = "elementname";
 
 
 }
